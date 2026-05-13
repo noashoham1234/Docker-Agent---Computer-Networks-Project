@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{NAME}}'s Server</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 3rem;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            animation: fadeIn 1.5s ease-out;
+        }
+        h1 { font-size: 3rem; margin-bottom: 0.5rem; }
+        p { font-size: 1.2rem; opacity: 0.9; }
+        .status {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #4cd137;
+            border-radius: 50px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .info {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #dcdde1;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hello, {{NAME}}! 👋</h1>
+        <p>Your container was successfully deployed.</p>
+        <div class="status">Status: Online</div>
+        <div class="info">
+            <p>Nginx server running via Docker</p>
+            <p>Container name: <strong>{{CONTAINER_NAME}}</strong></p>
+            <p>DHCP assigned IP: <strong>{{ASSIGNED_IP}}</strong></p>
+            <p>External Port: <strong>{{PORT}}</strong></p>
+            <p>Protocol: <strong>{{PROTOCOL}}</strong></p>
+        </div>
+    </div>
+</body>
+</html>
